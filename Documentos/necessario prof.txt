@@ -1,0 +1,10 @@
+Caríssimos,
+
+Para fins de avaliação do trabalho final do CCR, será considerado o uso dos seguintes recursos:
+
+1) Cadastros e consultas em banco de dados;
+2) Javascript
+3) Sessões, Cookies ou armazenamento local com HTML5
+4) Ajax
+
+Data de entrega:	segunda, 22 junho 2015, 19:00
