@@ -36,11 +36,28 @@
 
 }
 
-/* PAGINA CONTATO.HTMl */
-#contato_txt { 
-	width: 900px; 
+/* PAGINA INFO.HTMl */
+#info_txt { 
+	width: 800px;
 	margin: 1% auto;
 	overflow: hidden;
+	font: 20px 'Open Sans', Arial; 
+	text-align: center; 
+	text-shadow: 2px 2px 0 #ccc; 
+	margin-bottom: 20px; 
+	letter-spacing: -0.5px
+}
+
+/* PAGINA CONTATO.HTMl */
+#contato_txt { 
+	margin: 1% auto;
+	overflow: hidden;
+	font: 25px 'Open Sans', Arial; 
+	text-align: center; 
+	color: #555; 
+	text-shadow: 2px 2px 0 #ccc; 
+	margin-bottom: 20px; 
+	letter-spacing: -0.5px
 }
 
  /* AUTORES */
