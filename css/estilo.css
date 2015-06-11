@@ -1,3 +1,4 @@
+/* PAGINA INDEX.HTML */
 #pg_principal{
 	width:  800px; 					/* largura 			*/
 	height: 500px; 					/* comprimento 		*/
@@ -34,3 +35,16 @@
 	font: 15px 'Open Sans',Arial;
 
 }
+
+/* PAGINA CONTATO.HTMl */
+#contato_txt { 
+	width: 900px; 
+	margin: 1% auto;
+	overflow: hidden;
+}
+
+ /* AUTORES */
+.autores { background: #336FFF; bottom: 0; border-radius: 5px 5px 0 0; padding: 0px 10px; position: fixed; left: 75%; width: 280px}
+.autores p { color: #FFFFFF; font: 13px Tahoma, Arial }
+.autores p a { color: #333;	text-decoration: none }
+.autores p a:hover { text-decoration: underline }
