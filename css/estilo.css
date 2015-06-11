@@ -1,7 +1,14 @@
-/* PAGINA INDEX.HTML */
-#pg_principal{
-	width:  800px; 					/* largura 			*/
-	height: 500px; 					/* comprimento 		*/
+/* PAGINA PARTICIPAR.HTML */
+#pg_participar{
+	width: 1900px; 				/* largura 			*/
+	height: 800px; 				/* comprimento 		*/
+	padding: 0px;
+	margin: 3% auto;		
+}
+
+#formp{
+	width: 500px; 				/* largura 			*/
+	height: 500px; 				/* comprimento 		*/		
 }
 
 .name {
@@ -36,9 +43,33 @@
 
 }
 
+/* PAGINA INDEX.HTMl */
+#pg_index { 
+	width: 1900px; 				/* largura 			*/
+	height: 800px; 				/* comprimento 		*/
+	padding: 0px;
+	margin: 1% auto;
+}
+/*
+#filtro {
+	width: 350px;
+	height: 800px;
+	padding: 0px;
+	margin: 1% auto;	
+	float: left
+}
+*/
+#mapa { 
+	width: 1890px;
+	height: 800px;
+	padding: 0px;
+	margin: 3% auto;
+}
+
+
 /* PAGINA INFO.HTMl */
 #info_txt { 
-	width: 800px;
+	width: 1200px;
 	margin: 1% auto;
 	overflow: hidden;
 	font: 20px 'Open Sans', Arial; 
@@ -50,18 +81,17 @@
 
 /* PAGINA CONTATO.HTMl */
 #contato_txt { 
-	margin: 1% auto;
+	margin: 5% auto;
 	overflow: hidden;
 	font: 25px 'Open Sans', Arial; 
 	text-align: center; 
-	color: #555; 
 	text-shadow: 2px 2px 0 #ccc; 
 	margin-bottom: 20px; 
 	letter-spacing: -0.5px
 }
 
  /* AUTORES */
-.autores { background: #336FFF; bottom: 0; border-radius: 5px 5px 0 0; padding: 0px 10px; position: fixed; left: 75%; width: 280px}
+.autores { background: #336FFF; bottom: 0; border-radius: 5px 5px 0 0; padding: 0px 10px; position: fixed; left: 81%; width: 280px}
 .autores p { color: #FFFFFF; font: 13px Tahoma, Arial }
 .autores p a { color: #333;	text-decoration: none }
 .autores p a:hover { text-decoration: underline }

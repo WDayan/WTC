@@ -5,11 +5,18 @@
           
     <title>BruDay WTC</title>
     
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">                             <!-- nosso css -->
-    <link rel="stylesheet" type="text/css" href="css/menu.css">                               <!-- css menu -->
+    <!-- nosso css -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">                             
+    <!-- css menu -->
+    <link rel="stylesheet" type="text/css" href="css/menu.css">                               
     
-    <script type="text/javascript" src="script/cod1.js"></script>                             <!-- nossos codigos -->
-    <script type="text/javascript" src="scripts/bibliotecas/jquery-latest.min.js"></script>   <!-- script menu -->
+    <!-- script google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&v=3.exp"> </script>
+    <!-- nossos codigos -->
+    <script type="text/javascript" src="scripts/bruday-script.js"> </script>                            
+    <!-- script menu --> 
+    <script type="text/javascript" src="scripts/bibliotecas/jquery-latest.min.js"> </script>   
+    
   </head>
   <body>
    
@@ -19,15 +26,21 @@
        <li><a href='info.html'>Sobre</a></li>
        <li><a href='participar.html'>Participar</a></li>
        <li><a href='contato.html'>Contato</a></li>
-       <li style="display:scroll;position:fixed;top:5px;right:10px;"> <img src="imgs/logo_uffs.jpg"> </li>
+       <li style="display:scroll;position:fixed;top:10px;right:10px;"> <img src="imgs/logo_uffs.jpg"> </li>
       </ul>
     </div>
 
     <div id="pg_index">   <!-- nome da div principal da pagina -->
 
     <div>
-      <h1 style="bottom: 0; border-radius: 5px 5px 0 0; padding: 5px 10px; left: 38%width: 750px"> Mapa de Estudantes da Universidade Federal Fronteira Sul</h1>
-    </div>  
+      <h1 style="bottom: 0; border-radius: 5px 5px; padding: 5px 10px; position:fixed; top:38px; right:500px"> 
+        Mapa de Estudantes da Universidade Federal Fronteira Sul
+      </h1>
+    </div> 
+
+    <!-- <div id="filtro">filtro aqui!</div> -->
+
+    <div id="mapa"></div>
 
     <div class="autores">
       <p>Criado por: Bruno Dall Orsoletta e Dayan Weber</p>
