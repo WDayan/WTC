@@ -5,34 +5,20 @@
           
     <title>BruDay WTC</title>
     
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">                             <!-- nosso css -->
     <link rel="stylesheet" type="text/css" href="css/menu.css">                               <!-- css menu -->
-    
-    <script type="text/javascript" src="script/cod1.js"></script>                             <!-- nossos codigos -->
     <script type="text/javascript" src="scripts/bibliotecas/jquery-latest.min.js"></script>   <!-- script menu -->
+
   </head>
   <body>
-   
+  	
     <div id='cssmenu'>
-      <ul> <!-- class='active' define o selecionado -->
+      <ul>  <!-- class='active' define o selecionado -->
        <li class='active'><a href='index.html'>Home</a></li> 
        <li><a href='info.html'>Sobre</a></li>
        <li><a href='participar.html'>Participar</a></li>
        <li><a href='contato.html'>Contato</a></li>
       </ul>
     </div>
-
-    <div id="pg_index">   <!-- nome da div principal da pagina -->
-
-    <div>
-      mapa 
-    </div>  
-
-    <div class="autores">
-      <p>Criado por: Bruno Dall Orsoletta e Dayan Weber</p>
-    </div>
-    </div>
-
 
   </body>
 </html>

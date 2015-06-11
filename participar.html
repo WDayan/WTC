@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          
+    <title>BruDay WTC</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">                             <!-- nosso css -->
+    <link rel="stylesheet" type="text/css" href="css/menu.css">                               <!-- css menu -->
+    
+    <script type="text/javascript" src="script/cod1.js"></script>                             <!-- nossos codigos -->
+    <script type="text/javascript" src="scripts/bibliotecas/jquery-latest.min.js"></script>   <!-- script menu -->
+  </head>
+  <body>
+
+    <div id='cssmenu'>
+      <ul> <!-- class='active' define o selecionado -->
+       <li><a href='index.html'>Home</a></li> 
+       <li><a href='info.html'>Sobre</a></li>
+       <li class='active'><a href='participar.html'>Participar</a></li>
+       <li><a href='contato.html'>Contato</a></li>
+      </ul>
+    </div>
+
+    <div id="pg_participar">   <!-- nome da div principal da pagina -->
+
+    <h1 style="background: #EEE; bottom: 0; border-radius: 5px 5px 0 0; padding: 5px 10px; left: 38%width: 750px"> Mapa de Estudantes da Universidade Federal Fronteira Sul</h1>
+
+    <form method="post" action="index.html ">
+    <fieldset>
+      <legend>Mapa de Estudantes da Universidade Federal Fronteira Sul</legend>   
+      <div class="name">
+        <label for="txtNome">Nome:</label>
+        <input type="text" id="txtNome" name="txtNome" />
+      </div>
+      <div class="email">
+        <label for="txtEmail">Email:</label>
+        <input type="text" id="txtEmail" name="txtEmail" />
+      </div>
+      <div class="universidade">
+        <label for="txtUniversidade">Universidade:</label>
+        <input type="text" id="txtUniversidade" name="txtUniversidade" />
+      </div>
+      <div class="curso">
+        <label for="txtCurso">Curso:</label>
+        <input type="text" id="txtCurso" name="txtCurso"/>
+      </div>
+      <div class="campus">
+        <label for="txtEndereco">Endereço:</label>
+        <input type="text" id="txtEndereco" name="txtEndereco" />
+        <input type="button" id="btnEndereco" name="btnEndereco" value="Mostrar no mapa" />
+      </div>
+      <div id="mapa"></div>
+      <input type="submit" value="Enviar" name="btnEnviar" />
+      <input type="hidden" id="txtLatitude" name="txtLatitude" />
+      <input type="hidden" id="txtLongitude" name="txtLongitude" />
+    </fieldset>
+  </form>
+
+    <div class="autores">
+      <p>Criado por: Bruno Dall Orsoletta e Dayan Weber</p>
+    </div>
+    </div>
+
+
+  </body>
+</html>
