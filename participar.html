@@ -16,6 +16,10 @@
     <script type="text/javascript" src="scripts/bruday-script.js"> </script>                            
     <!-- script menu --> 
     <script type="text/javascript" src="scripts/bibliotecas/jquery-latest.min.js"> </script>  
+    <!-- script $ jquery -->
+    <script type="text/javascript" src="scripts/bibliotecas/jquery.min.js"></script>
+    <!-- script $ jquery -->
+    <script type="text/javascript" src="scripts/bibliotecas/jquery-ui.custom.min.js"></script>
     
   </head>
   <body>
@@ -35,35 +39,51 @@
 
     <h1 style="bottom: 0; border-radius: 5px 5px; padding: 5px 10px; position:fixed; top:38px; right:500px"> Cadastro Estudantes da Universidade Federal Fronteira Sul</h1>
 
-    <form id="formp" method="post" action="phpc.php ">
+    <form id="formp" method="post" action="phpc.php" style="float: left ">
     <fieldset>
       <legend>Mapa de Estudantes da Universidade Federal Fronteira Sul</legend>   
-      <div class="name">
+      <div class="form_name">
         <label for="txtNome">Nome:</label>
         <input type="text" id="txtNome" name="txtNome" />
       </div>
-      <div class="email">
+      <div class="form_email">
         <label for="txtEmail">Email:</label>
         <input type="text" id="txtEmail" name="txtEmail" />
       </div>
-      <div class="universidade">
-        <label for="txtUniversidade">Universidade:</label>
+      <div class="form_campus">
+        <label for="txtCampus">Campus:</label>
         <input type="text" id="txtUniversidade" name="txtUniversidade" />
       </div>
-      <div class="curso">
+      <div class="form_curso">
         <label for="txtCurso">Curso:</label>
         <input type="text" id="txtCurso" name="txtCurso"/>
+      </div>     
+
+      <div class="form_endereco">
+        <label for="txtEndereco">Endereço Origem:</label>
+        <input type="text" id="txtEndereco" name="txtEndereco"/>
+        <input type="button" id="btnEndereco" name="btnEndereco" onclick="codeAddress1()" value="Mostrar no mapa" />
       </div>
-      <div class="campus">
-        <label for="txtEndereco">Endereço:</label>
-        <input type="text" id="txtEndereco" name="txtEndereco" />
-        <input type="button" id="btnEndereco" name="btnEndereco" value="Mostrar no mapa" />
+      <div>        
+        Lat: <input type="text" id="txtLatitude" name="txtLatitude"/>
+        Long: <input type="text" id="txtLongitude" name="txtLongitude"/>
       </div>
+      
+      <div class="form_endereco">
+        <label for="txtEndereco">Endereço Atual:</label>
+        <input type="text" id="txtEndereco2" name="txtEndereco2"/>
+        <input type="button" id="btnEndereco2" name="btnEndereco2" onclick="codeAddress2()" value="Mostrar no mapa" />
+      </div>
+      <div>
+        Lat: <input type="text" id="txtLatitude2" name="txtLatitude2"/>
+        Long: <input type="text" id="txtLongitude2" name="txtLongitude2"/>
+      </div>
+
       <input type="submit" value="Enviar" name="btnEnviar" />
-      <input type="hidden" id="txtLatitude" name="txtLatitude" />
-      <input type="hidden" id="txtLongitude" name="txtLongitude" />
     </fieldset>
   </form>
+
+    <div id="form_mapa" style="float: right; position:fixed; top:10%; right:100px"></div>
 
     <div class="autores">
       <p>Criado por: Bruno Dall Orsoletta e Dayan Weber</p>

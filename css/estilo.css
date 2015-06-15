@@ -11,36 +11,11 @@
 	height: 500px; 				/* comprimento 		*/		
 }
 
-.name {
-	margin: 0 auto 5px;
-	padding: 3px 0px;
-	overflow: hidden;
-}
-.name label {
-	background: #AAA;  				/* cor fundo 		*/
-	border-radius: 6px 0 0 6px; 
-	color: #f0f0f0; 
-	cursor: pointer; 
-	display: block;  
-	float: left; 
-	font: 15px 'Open Sans',Arial;
-}
-
-.email{
-	margin: 0 auto 5px;
-	padding: 3px 0px;
-	overflow: hidden;
-}
-
-.email label{
-	background: #fff;  				/* cor fundo 		*/
-	border-radius: 6px 0 0 6px; 
-	color: #f0f0f0; 
-	cursor: pointer; 
-	display: block;  
-	float: left; 
-	font: 15px 'Open Sans',Arial;
-
+#form_mapa { 
+	width: 500px;
+	height: 300px;
+	padding: 0px 0px;
+	margin: 3% auto;
 }
 
 /* PAGINA INDEX.HTMl */
