@@ -49,7 +49,6 @@
 	overflow: hidden;
 	font: 20px 'Open Sans', Arial; 
 	text-align: center; 
-	text-shadow: 2px 2px 0 #ccc; 
 	margin-bottom: 20px; 
 	letter-spacing: -0.5px
 }
@@ -59,8 +58,7 @@
 	margin: 5% auto;
 	overflow: hidden;
 	font: 25px 'Open Sans', Arial; 
-	text-align: center; 
-	text-shadow: 2px 2px 0 #ccc; 
+	text-align: center;  
 	margin-bottom: 20px; 
 	letter-spacing: -0.5px
 }
