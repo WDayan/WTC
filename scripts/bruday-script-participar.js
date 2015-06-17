@@ -8,38 +8,18 @@ var controle2 = 0;
 
 function initialize() {
   
-  geocoder = new google.maps.Geocoder();
+	geocoder = new google.maps.Geocoder();
   
-  var latLng = new google.maps.LatLng(-27.114699175568244, -52.707327651977494);
+	var latLng = new google.maps.LatLng(-27.114699175568244, -52.707327651977494);
 
-  var mapOptions = {
-    zoom: 16,
-    center: latLng,
-    mapTypeId: google.maps.MapTypeId.HYBRID 
-  };
+	var mapOptions = {
+    	zoom: 16,
+    	center: latLng,
+    	mapTypeId: google.maps.MapTypeId.HYBRID 
+	};
 
-   map = new google.maps.Map(document.getElementById('form_mapa'), mapOptions);
-
-  /* Try HTML5 geolocation */
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: pos,
-        content: 'Location found using HTML5.'
-      });
-
-      map.setCenter(pos);
-    }, function() {
-      handleNoGeolocation(true);
-    });
-  } else {
-    /* Browser doesn't support Geolocation */
-    handleNoGeolocation(false);
-  } 
+	map = new google.maps.Map(document.getElementById('form_mapa'), mapOptions);
+ 
 	/* autocomplete endereço 1 origem */
 	$("#txtEndereco").autocomplete({
     	source: function (request, response) {
@@ -159,23 +139,5 @@ function codeAddress2() {
   }
 };
 /* fim função codeAddress2() */
-
-
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
-  }
-
-  var options = {
-    map: map,
-    position: latLng,
-    content: content
-  };
-
-  var infowindow = new google.maps.InfoWindow(options);
-  map.setCenter(options.position);
-}
 
 google.maps.event.addDomListener(window, 'load', initialize); 	/* chamada da função initialize */

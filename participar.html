@@ -42,48 +42,125 @@
     <form id="formp" method="post" action="phpc.php" style="float: left ">
     <fieldset>
       <legend>Mapa de Estudantes da Universidade Federal Fronteira Sul</legend>   
+      <div class="form_cpf">
+        <label for="txtCpf">CPF:</label>
+        <input type="text" id="txtCpf" name="txtCpf" />
+      </div>
       <div class="form_name">
         <label for="txtNome">Nome:</label>
         <input type="text" id="txtNome" name="txtNome" />
       </div>
+      <div class="form_aniver">
+        <label for="txtAniver">Data Nascimento</label>
+        <input type="date" id="txtAniver" name="txtAniver">
+      </div>
+      <div class="form_escolaridade">
+        <label for="txtEscolaridade">Escolaridade</label>
+         <select>
+          <option>Escolha...</option>
+          <option value="Ensino Médio Particular">Ensino Médio Particular</option>
+          <option value="Ensino Médio Publico">Ensino Médio Publico</option>
+          <option value="Ensino Tecnico">Ensino Tecnico</option>
+          <option value="Superior Incompleto">Superior Incompleto</option>
+          <option value="Superior">Superior</option>
+        </select> 
+      </div>
       <div class="form_email">
         <label for="txtEmail">Email:</label>
-        <input type="text" id="txtEmail" name="txtEmail" />
+        <input type="email" id="txtEmail" name="txtEmail" />
       </div>
       <div class="form_campus">
         <label for="txtCampus">Campus:</label>
-        <input type="text" id="txtUniversidade" name="txtUniversidade" />
-      </div>
+        <select>
+          <option>Escolha...</option>
+          <option value="Chapecó">Chapecó</option>
+          <option value="Cerro Largo">Cerro Largo</option>
+          <option value="Erechim">Erechim</option>
+          <option value="Laranjeiras do Sul">Laranjeiras do Sul</option>
+          <option value="Realeza">Realeza</option>
+          <option value="Passo Fundo">Passo Fundo</option>
+        </select>        
+        </div>
+      <div class="form_nota">
+        <label for="txtNota">Nota:</label>
+        <input type="number" id="txtNota" name="txtNota" min="1" max="5"/>
+      </div> 
       <div class="form_curso">
         <label for="txtCurso">Curso:</label>
-        <input type="text" id="txtCurso" name="txtCurso"/>
-      </div>     
+        
+        <select>
+          <option>??</option>
+        </select>
+      
+      </div>   
 
+      <div class="form_periodo">
+        <label for="txtPeriodo">Periodo</label>
+        <select>
+          <option>Escolha...</option>
+          <option value="Diurno">Diurno</option>
+          <option value="Noturno">Noturno</option>
+        </select> 
+      </div>
+
+      <div class="form_ingresso">
+        <label for="txtIngresso">Data Ingresso</label>
+        <input type="date" id="txtIngresso" name="txtIngresso">
+      </div>
+
+      <div class="form_concluido">
+        <label for="txtConcluido">Data Formatura</label>
+        <input type="date" id="txtConcluido" name="txtConcluido">
+      </div>
+
+      <div class="form_etnia">
+        <label for="txtEtnia">Etina</label>
+        <select>
+          <option>Escolha...</option>
+          <option value="Branco">Branco</option>
+          <option value="Pardo">Pardo</option>
+          <option value="Preto">Preto</option>
+          <option value="Indigina">Indigina</option>
+        </select> 
+      </div>
+
+      <div class="form_esporte">
+        <label for="txtEsporte">Esporte:</label>
+        <select>
+          <option>Escolha...</option>
+          <option value="Futebol">Futebol</option>
+          <option value="Volei">Volei</option>
+          <option value="Basquete">Basquete</option>
+        </select> 
+      </div>   
       <div class="form_endereco">
         <label for="txtEndereco">Endereço Origem:</label>
         <input type="text" id="txtEndereco" name="txtEndereco"/>
         <input type="button" id="btnEndereco" name="btnEndereco" onclick="codeAddress1()" value="Mostrar no mapa" />
-      </div>
-      <div>        
-        Lat: <input type="text" id="txtLatitude" name="txtLatitude"/>
-        Long: <input type="text" id="txtLongitude" name="txtLongitude"/>
-      </div>
-      
-      <div class="form_endereco">
+      </div>      
+      <div class="form_endereco2">
         <label for="txtEndereco">Endereço Atual:</label>
         <input type="text" id="txtEndereco2" name="txtEndereco2"/>
         <input type="button" id="btnEndereco2" name="btnEndereco2" onclick="codeAddress2()" value="Mostrar no mapa" />
       </div>
-      <div>
-        Lat: <input type="text" id="txtLatitude2" name="txtLatitude2"/>
-        Long: <input type="text" id="txtLongitude2" name="txtLongitude2"/>
-      </div>
 
-      <input type="submit" value="Enviar" name="btnEnviar" />
+      <div class="form_submit">
+        <input type="submit" value="Enviar" name="btnEnviar" />
+      </div>
     </fieldset>
   </form>
 
-    <div id="form_mapa" style="float: right; position:fixed; top:10%; right:100px"></div>
+    <div id="form_mapa" style="float: right; position:fixed; top:10%; right:100px">
+    </div>
+
+      <div>        
+        Lat1: <input type="text" id="txtLatitude" name="txtLatitude"/>
+        Long1: <input type="text" id="txtLongitude" name="txtLongitude"/>
+      </div>
+      <div>
+        Lat2: <input type="text" id="txtLatitude2" name="txtLatitude2"/>
+        Long2: <input type="text" id="txtLongitude2" name="txtLongitude2"/>
+      </div>
 
     <div class="autores">
       <p>Criado por: Bruno Dall Orsoletta e Dayan Weber</p>

@@ -1,21 +1,271 @@
 /* PAGINA PARTICIPAR.HTML */
 #pg_participar{
 	width: 1900px; 				/* largura 			*/
-	height: 800px; 				/* comprimento 		*/
+	height: 1200px; 				/* comprimento 		*/
 	padding: 0px;
-	margin: 3% auto;		
+	margin: 3% auto;	
+	overflow: hidden;	
 }
 
 #formp{
-	width: 500px; 				/* largura 			*/
-	height: 500px; 				/* comprimento 		*/		
+	width: 900px; 				/* largura 			*/
+	height: 1200px; 				/* comprimento 		*/		
+}
+
+.form_cpf {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_name {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_aniver {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_escolaridade {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_email {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_campus {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_nota {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_curso {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_periodo {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_ingresso {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_concluido {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_etnia {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_esporte {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_endereco {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+.form_endereco2 {
+	width: 700px;
+	margin: 0 auto 0px;
+	padding: 3px 0px;
+	overflow: hidden;
+	float: left
+}
+
+label {
+	background: #333; 
+	border-radius: 6px 0 0 6px; 
+	color: #f0f0f0; 
+	cursor: pointer; 
+	display: block; 
+	height: 15px; 
+	float: left; 
+	font: 16px 'Open Sans',Arial;
+	padding: 7px 13px;
+	width: 200px;
+}
+
+select { 
+	background: #FFF;
+	color: #666;
+	display: block;
+	float: auto;
+	height: 30px;
+	padding: 0px;
+	width: 200px; 
+}
+
+input[type="number"] { 
+	background: #FFF;
+	color: #666;
+	display: block;
+	float: auto;
+	height: 23px;
+	padding: 0px;
+	width: 40px; 
+}
+
+input[type="date"] { 
+	background: #FFF;
+	color: #666;
+	display: block;
+	float: auto;
+	height: 23px;
+	padding: 0px;
+	width: 150px; 
+}
+
+input[type="email"] { 
+	background: #FFF;
+	color: #666;
+	display: block;
+	float: auto;
+	font: 15px 'Open Sans',Arial; 
+	height: 7px;
+	padding: 9px;
+	width: 350px; 
+}
+
+input[type="text"] { 
+	background: #FFF;
+	color: #666;
+	display: block;
+	float: auto;
+	font: 15px 'Open Sans',Arial; 
+	height: 7px;
+	padding: 9px;
+	width: 350px; 
+}
+
+input[type="button"] { 
+	background: #2679A5; 
+	border-radius: 0 6px 6px 0;
+    color: #FFF;
+    cursor: pointer;
+    float: auto;
+    height: 34px;
+    font: 15px 'Open Sans',Arial;
+    padding: 2px 13px 6px;
+    width: 150px;
+
+    -webkit-transition: background .2s ease-in;
+    -moz-transition: background .2s ease-in;
+    -ms-transition: background .2s ease-in;
+    -o-transition: background .2s ease-in;
+    transition: background .2s ease-in;
+}
+
+input[type="button"]:hover { background: #12587C }
+
+input[type="submit"] {
+	background: #2679A5; 
+	border-radius: 6px;
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    font: 20px 'Open Sans',Arial;
+    padding: 7.5px 15px;
+    width: 250px;
+
+    -webkit-transition: background .2s ease-in;
+    -moz-transition: background .2s ease-in;
+    -ms-transition: background .2s ease-in;
+    -o-transition: background .2s ease-in;
+    transition: background .2s ease-in;
+}
+
+input[type="submit"]:hover { background: #12587C }
+
+.ui-autocomplete { 
+	background: #fff; 
+	border-top: 1px solid #ccc;
+	cursor: pointer; 
+	font: 15px 'Open Sans',Arial;
+	margin-left: 3px;
+	width: 493px !important;
+	position: fixed;
+}
+
+.ui-autocomplete .ui-menu-item { 
+	list-style: none outside none;
+	padding: 7px 0 9px 10px;
+}
+
+.ui-autocomplete .ui-menu-item:hover { background: #eee }
+
+.ui-autocomplete .ui-corner-all { 
+	color: #666 !important;
+	display: block;
 }
 
 #form_mapa { 
 	width: 500px;
-	height: 300px;
-	padding: 0px 0px;
-	margin: 3% auto;
+	height: 500px;
+	margin: 5% auto;
+	position:fixed;
+	top:10px;
+	right:10px;
 }
 
 /* PAGINA INDEX.HTMl */
