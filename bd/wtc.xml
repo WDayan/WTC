@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.3.11
+- http://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: 19-Jun-2015 às 00:22
+- Versão do servidor: 5.6.24
+- PHP Version: 5.5.24
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="wtc" collation="utf8_general_ci" charset="utf8">
+            <pma:table name="endereco">
+                CREATE TABLE `endereco` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `longitude` varchar(50) DEFAULT NULL,
+                  `latitude` varchar(50) DEFAULT NULL,
+                  `endereco` varchar(80) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="campus">
+                CREATE TABLE `campus` (
+                  `nome` varchar(40) NOT NULL,
+                  `endereco_id` int(11) NOT NULL,
+                  `site` varchar(30) NOT NULL,
+                  `telefone1` varchar(30) NOT NULL,
+                  `telefone2` varchar(30) NOT NULL,
+                  PRIMARY KEY (`nome`),
+                  KEY `campus_endereco_fk` (`endereco_id`),
+                  CONSTRAINT `campus_endereco_fk` FOREIGN KEY (`endereco_id`) REFERENCES `endereco` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="curso">
+                CREATE TABLE `curso` (
+                  `nome` varchar(30) NOT NULL,
+                  `nomec` varchar(40) NOT NULL,
+                  PRIMARY KEY (`nome`,`nomec`),
+                  KEY `Campus_Curso_fk` (`nomec`),
+                  CONSTRAINT `Campus_Curso_FK` FOREIGN KEY (`nomec`) REFERENCES `campus` (`nome`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="dblog">
+                CREATE TABLE `dblog` (
+                  `user` varchar(10) NOT NULL,
+                  `pass` varchar(10) NOT NULL,
+                  PRIMARY KEY (`user`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+
+            <pma:table name="esporte">
+                CREATE TABLE `esporte` (
+                  `sig` varchar(10) NOT NULL,
+                  `nome` varchar(40) NOT NULL,
+                  PRIMARY KEY (`sig`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="estudante">
+                CREATE TABLE `estudante` (
+                  `cpf` varchar(11) NOT NULL,
+                  `nomecur` varchar(30) NOT NULL,
+                  `nomecam` varchar(40) NOT NULL,
+                  `endorigem` int(11) NOT NULL,
+                  `endatual` int(11) NOT NULL,
+                  `dtnasc` date NOT NULL,
+                  `nome` varchar(40) NOT NULL,
+                  `escladde` varchar(30) NOT NULL,
+                  `etnia` varchar(10) NOT NULL,
+                  `Período` varchar(10) NOT NULL,
+                  `Concluido` date NOT NULL,
+                  `Ingresso` date NOT NULL,
+                  PRIMARY KEY (`cpf`),
+                  KEY `curso_estudante_fk` (`nomecur`,`nomecam`),
+                  KEY `endOrigem_estudante_fk` (`endorigem`),
+                  KEY `endAtual_estudante_fk` (`endatual`),
+                  CONSTRAINT `curso_estudante_fk` FOREIGN KEY (`nomecur`, `nomecam`) REFERENCES `curso` (`nome`, `nomec`),
+                  CONSTRAINT `endAtual_estudante_fk` FOREIGN KEY (`endatual`) REFERENCES `endereco` (`id`),
+                  CONSTRAINT `endOrigem_estudante_fk` FOREIGN KEY (`endorigem`) REFERENCES `endereco` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+            <pma:table name="pratica">
+                CREATE TABLE `pratica` (
+                  `sige` varchar(10) NOT NULL,
+                  `cpfe` varchar(11) NOT NULL,
+                  PRIMARY KEY (`sige`,`cpfe`),
+                  KEY `estudante_esporte_fk` (`cpfe`),
+                  KEY `esporte_estudante_fk` (`sige`),
+                  CONSTRAINT `Esporte_Estudante_FK` FOREIGN KEY (`sige`) REFERENCES `esporte` (`sig`),
+                  CONSTRAINT `Estudante_Esporte_FK` FOREIGN KEY (`cpfe`) REFERENCES `estudante` (`cpf`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'wtc'
+    -->
+    <database name="wtc">
+        <!-- Tabela endereco -->
+		<table name="endereco">
+            <column name="id">5</column>
+            <column name="longitude">NULL</column>
+            <column name="latitude">NULL</column>
+            <column name="endereco">Brasil, SC, Chapecó, Fronteira Sul, SC-484 Km 02</column>
+        </table>
+        <table name="endereco">
+            <column name="id">6</column>
+            <column name="longitude">NULL</column>
+            <column name="latitude">NULL</column>
+            <column name="endereco">Brasil, RS, Cerro Largo, Centro, Rua Major Antônio Cardoso, 590</column>
+        </table>
+        <table name="endereco">
+            <column name="id">7</column>
+            <column name="longitude">NULL</column>
+            <column name="latitude">NULL</column>
+            <column name="endereco">Brasil, RS, Erechim, Fátima, Avenida Dom João Hoffmann, 313</column>
+        </table>
+        <table name="endereco">
+            <column name="id">8</column>
+            <column name="longitude">NULL</column>
+            <column name="latitude">NULL</column>
+            <column name="endereco">Brasil, PR, Laranjeiras do Sul, BR 158, Km 405</column>
+        </table>
+        <table name="endereco">
+            <column name="id">9</column>
+            <column name="longitude">NULL</column>
+            <column name="latitude">NULL</column>
+            <column name="endereco">Brasil, PR, Realeza, PR 182 Km 466, Rua Edmundo Gaievski, 1000</column>
+        </table>
+        <table name="endereco">
+            <column name="id">10</column>
+            <column name="longitude">NULL</column>
+            <column name="latitude">NULL</column>
+            <column name="endereco">Brasil, PR, Passo Fundo, Jardim América, RS 153 Km 3</column>
+        </table>
+        <!-- Tabela campus -->
+        <table name="campus">
+            <column name="nome">Cerro Largo</column>
+            <column name="endereco_id">6</column>
+            <column name="site">http://www.uffs.edu.br/</column>
+            <column name="telefone1">(55) 3359-3950</column>
+            <column name="telefone2">(55) 3359-3951</column>
+        </table>
+        <table name="campus">
+            <column name="nome">Chapecó</column>
+            <column name="endereco_id">5</column>
+            <column name="site">http://www.uffs.edu.br/</column>
+            <column name="telefone1">(49) 2049-2600</column>
+            <column name="telefone2">(49) 2049-6486</column>
+        </table>
+        <table name="campus">
+            <column name="nome">Erechim</column>
+            <column name="endereco_id">7</column>
+            <column name="site">http://www.uffs.edu.br/</column>
+            <column name="telefone1">(54) 3321-7050</column>
+            <column name="telefone2">(54) 3321-7063</column>
+        </table>
+        <table name="campus">
+            <column name="nome">Laranjeiras</column>
+            <column name="endereco_id">8</column>
+            <column name="site">http://www.uffs.edu.br/</column>
+            <column name="telefone1">(42) 3635-0000</column>
+            <column name="telefone2"> (42) 3635 0080</column>
+        </table>
+        <table name="campus">
+            <column name="nome">Passo Fundo</column>
+            <column name="endereco_id">10</column>
+            <column name="site">http://www.uffs.edu.br/</column>
+            <column name="telefone1">(49) 2049-1500</column>
+            <column name="telefone2">(49) 2049-1500</column>
+        </table>
+        <table name="campus">
+            <column name="nome">Realeza</column>
+            <column name="endereco_id">9</column>
+            <column name="site">http://www.uffs.edu.br/</column>
+            <column name="telefone1">(46) 3543-8300</column>
+            <column name="telefone2">(46) 3543-8302</column>
+        </table>
+        <!-- Tabela curso -->
+        <table name="curso">
+            <column name="nome">Administração</column>
+            <column name="nomec">Cerro Largo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Agronomia</column>
+            <column name="nomec">Cerro Largo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Ciências Biológicas</column>
+            <column name="nomec">Cerro Largo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Engenharia Ambiental</column>
+            <column name="nomec">Cerro Largo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Física</column>
+            <column name="nomec">Cerro Largo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Letras Português e Espanhol</column>
+            <column name="nomec">Cerro Largo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Química</column>
+            <column name="nomec">Cerro Largo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Administração</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Agronomia</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Ciência da Computação</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Ciências Sociais</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Enfermagem</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Engenharia Ambiental</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Filosofia</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Geografia</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">História</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Letras Português e Espanhol</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Matemática</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Pedagogia</column>
+            <column name="nomec">Chapecó</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Agronomia</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Agronomia - Edital Pronera</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Arquitetura e Urbanismo</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Ciências Sociais</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Engenharia Ambiental</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Filosofia</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Geografia</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">História</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">História - Edital Pronera</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">I.E.C. Ciências da Natureza</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Interd. em Edu. no Campo</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Pedagogia</column>
+            <column name="nomec">Erechim</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Agronomia</column>
+            <column name="nomec">Laranjeiras</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Ciências Econômicas</column>
+            <column name="nomec">Laranjeiras</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Engenharia de Alimentos</column>
+            <column name="nomec">Laranjeiras</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Engenharia de Aquicultura</column>
+            <column name="nomec">Laranjeiras</column>
+        </table>
+        <table name="curso">
+            <column name="nome">I.E.C. Cien. Sociais e Humanas</column>
+            <column name="nomec">Laranjeiras</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Medicina</column>
+            <column name="nomec">Passo Fundo</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Ciências Biologicas</column>
+            <column name="nomec">Realeza</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Ciências Naturias</column>
+            <column name="nomec">Realeza</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Física</column>
+            <column name="nomec">Realeza</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Letras Português e Espanhol</column>
+            <column name="nomec">Realeza</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Medicina Veterinária</column>
+            <column name="nomec">Realeza</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Nutrição</column>
+            <column name="nomec">Realeza</column>
+        </table>
+        <table name="curso">
+            <column name="nome">Química</column>
+            <column name="nomec">Realeza</column>
+        </table>
+        <!-- Tabela dblog -->
+        <table name="dblog">
+            <column name="user">dw</column>
+            <column name="pass">dw12</column>
+        </table>        
+        <!-- Tabela esporte -->
+        <!-- Tabela estudante -->
+        <!-- Tabela pratica -->
+    </database>
+</pma_xml_export>
