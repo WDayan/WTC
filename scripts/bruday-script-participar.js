@@ -51,7 +51,6 @@ function initialize() {
 /* fim função initialize() */
 
 function codeAddress1() {
-  if (controle1 == 0){
 	  var cadastro_address = document.getElementById('txtEndereco').value;
 	  geocoder.geocode( { 'address': cadastro_address}, function (results, status) {
 	    if (status == google.maps.GeocoderStatus.OK) {
@@ -64,7 +63,13 @@ function codeAddress1() {
             $('#txtLongitude').val(longitude);
 
 	    	map.setCenter(results[0].geometry.location);
-	      	
+	    
+	    if (controle1 >0){
+	    	marker1.position = results[0].geometry.location;
+	    	marker1.setMap(map);
+	    }
+
+	    if (controle1 == 0){
 	      	marker1 = new google.maps.Marker({
 	          map: map,
 	          title: 'Vim daqui!',
@@ -73,7 +78,7 @@ function codeAddress1() {
 	          position: results[0].geometry.location
 	      });
 	    controle1 +=1;
-
+		}
 	    google.maps.event.addListener(marker1, 'drag', function () {
 	        geocoder.geocode({ 'latLng': marker1.getPosition() }, function (results, status) {
 	            if (status == google.maps.GeocoderStatus.OK) {
@@ -91,12 +96,11 @@ function codeAddress1() {
 	      alert('Geocode was not successful for the following reason: ' + status);
 	    }
 	})
-  }
 };
 /* fim função codeAddress1() */
 
 function codeAddress2() {   
-  if (controle2 == 0) {
+ 
 	  var cadastro_address = document.getElementById('txtEndereco2').value;
 	  geocoder.geocode( { 'address': cadastro_address}, function(results, status) {
 	    if (status == google.maps.GeocoderStatus.OK) {
@@ -109,7 +113,13 @@ function codeAddress2() {
             $('#txtLongitude2').val(longitude);
 
 	    	map.setCenter(results[0].geometry.location);
-	      	
+	    
+	    if (controle2 >0){
+	    	marker2.position = results[0].geometry.location;
+	    	marker2.setMap(map);
+	    }
+
+	    if (controle2 == 0) {
 	      	marker2 = new google.maps.Marker({
 	          map: map,
 	          title: 'Estou Aqui!',
@@ -118,7 +128,7 @@ function codeAddress2() {
 	          position: results[0].geometry.location
 	      });
 	    controle2 +=1;
-
+	    }
 	    google.maps.event.addListener(marker2, 'drag', function () {
 	        geocoder.geocode({ 'latLng': marker2.getPosition() }, function (results, status) {
 	            if (status == google.maps.GeocoderStatus.OK) {
@@ -136,7 +146,6 @@ function codeAddress2() {
 	      alert('Geocode was not successful for the following reason: ' + status);
 	    }
 	})
-  }
 };
 /* fim função codeAddress2() */
 
