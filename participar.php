@@ -1,77 +1,4 @@
-<?php
-	require_once 'fcnsdb.php';
-	require_once 'logindb.php';
-  require_once 'querys.php';
-	ini_set('default_charset', 'UTF-8');
 
-	function qualCursoMostrar(){
-		if(isset($_POST["campus"])){
-			$campus = $_POST["campus"];
-			$query = "SELECT nome FROM curso where nomec = '".$campus."';";
-			return query($banco, $query);
-		}		
-	} //Retorna uma tabela com os nomes de todos os cursos que deverão ser mostrados
-
-	if(issset($_POST["btnEnviar"])){
-		//Precisa se verificar CPF, NOME, EMAIL. Cadastrar endereços, salvar ID
-		$cpf = $_POST["txtCpf"];
-		$nome = $_POST["txtNome"];
-		$email = $_POST["txtEmail"];
-		$periodo = $_POST["periodo"];
-		$endatual = $_POST["txtEndereco2"];
-		$endorigem = $_POST["txtEndereco"];
-		$dtnasc = $_POST["txtAniver"];
-		$nota = $_POST["txtNota"];
-		$dtingresso = $_POST["txtIngresso"];
-		$dtconcluido = $_POST["txtConcluido"];
-
-    //Validando dados
-    vName($name);
-    vCpf($cpf);
-    vEmail($email);
-    if(!$email){
-        die("E-mail digitado é inválido.");
-    }
-    
-    intoEndereco($banco,$endatual);
-    $idatual = lastAddress($banco);
-    intoEndereco($endorigem);
-    $idorigem = lastAddres($banco);
-
-
-
-	}
-
-	function teste(){
-		echo "aeeee pohhooaaa funcionaaaaaddoooo";
-	}
-
-
-
-
-
-
-
-
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -99,18 +26,18 @@
 
     <div id='cssmenu'>
       <ul> <!-- class='active' define o selecionado -->
-       <li><a href='index.html'>Home</a></li> 
+       <li><a href='index.php'>Home</a></li> 
        <li><a href='info.html'>Sobre</a></li>
-       <li class='active'><a href='formulario.php'>Participar</a></li>
+       <li class='active'><a href='participar.php'>Participar</a></li>
        <li><a href='contato.html'>Contato</a></li>
-       <li><a href='relatorio.html'>Relatórios</a></li>
+       <li><a href='relatorio.php'>Relatórios</a></li>
        <li style="display:scroll;position:fixed;top:10px;right:10px;"> <img src="imgs/logo_uffs.jpg" title="UFFS" alt="LOGO UFFS"> </li>
       </ul>
     </div>
 
     <div id="pg_participar">   <!-- nome da div principal da pagina -->
 
-    <h1 style="bottom: 0; border-radius: 5px 5px; padding: 5px 10px; position:fixed; top:38px; right:500px"> Cadastro Estudantes da Universidade Federal Fronteira Sul</h1>
+    <!-- <h1 style="bottom: 0; border-radius: 5px 5px; padding: 5px 10px; position:fixed; top:38px; right:500px"> Cadastro Estudantes da Universidade Federal Fronteira Sul</h1> -->
 
     <form id="formp" method="post" action="phpc.php" style="float: left ">
     <fieldset>
@@ -129,7 +56,7 @@
       </div>
       <div class="form_escolaridade">
         <label for="txtEscolaridade">Escolaridade</label>
-         <select name="txtEscolaridade" onclick="teste()">
+         <select>
           <option>Escolha...</option>
           <option value="Ensino Médio Particular">Ensino Médio Particular</option>
           <option value="Ensino Médio Publico">Ensino Médio Publico</option>

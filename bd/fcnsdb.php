@@ -24,7 +24,8 @@
 	}
 
 	function vEmail($mail){
-		// Regex email   “/^[a-z\d\._-]+@([a-z\d-]+\.)+[a-z]{2,4}$/i”
+		$regex = '/^[a-z\d\._-]+@([a-z\d-]+\.)+[a-z]{2,4}$/i';
+		return preg_match($regex, $mail); //Função retorna true or false
 	}
 
 	function vName($name){

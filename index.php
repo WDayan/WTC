@@ -1,9 +1,40 @@
-<!DOCTYPE html>
+
+<?php
+  ini_set('default_charset', 'utf8_general_ci');
+    require_once 'bd/fcnsdb.php';
+    require_once 'bd/logindb.php';
+    require_once 'bd/querys.php';
+    $banco = conectadb($dbHostname, $dbUsername, $dbPassword); //faz a coneão com phpMyAdmin
+    selectdb($banco, $dbDatabase); //Alterando a conexão seleciona o bando em $dbDatabase
+    $result = allCampus($banco);
+    $var_script = array();
+    $count_x = 0;
+    $i = 0;
+    $j = 0;
+
+    while($row = mysqli_fetch_array($result)){
+      
+    // codigo generico das consultas  
+      for ($i=0; $i < ( sizeof($row)/2 ) ; $i++, $j++){
+        $var_script[$j] = $row[$i];   // grava row em var_script como um matriz
+      }
+        $count_x = $i;
+    }
+    $string_array = implode('|', $var_script);
+?>
+
+
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
           
     <title>BruDay WTC</title>
+
+    <script type="text/javascript">  
+      var string_array7 = " <?php echo "$string_array"; ?>";
+      VARS_AMBIENTE = string_array7.split("|");
+      VARS_AMBIENTE_CONTROLE = " <?php echo "$count_x"; ?>";
+    </script>
     
     <!-- nosso css -->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">                             
@@ -31,11 +62,11 @@
    
     <div id='cssmenu'>
       <ul> <!-- class='active' define o selecionado -->
-       <li class='active'><a href='index.html'>Home</a></li> 
+       <li class='active'><a href='index.php'>Home</a></li> 
        <li><a href='info.html'>Sobre</a></li>
-       <li><a href='participar.html'>Participar</a></li>
+       <li><a href='participar.php'>Participar</a></li>
        <li><a href='contato.html'>Contato</a></li>
-       <li><a href='relatorio.html'>Relatórios</a></li>
+       <li><a href='relatorio.php'>Relatórios</a></li>
        <li style="display:scroll;position:fixed;top:10px;right:10px;"> <img src="imgs/logo_uffs.jpg" title="UFFS" alt="LOGO UFFS"> </li>
       </ul>
     </div>
@@ -56,7 +87,5 @@
       <p>Criado por: Bruno Dall Orsoletta e Dayan Weber</p>
     </div>
     </div>
-
-
   </body>
 </html>

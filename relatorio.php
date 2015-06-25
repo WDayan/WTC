@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,11 +22,11 @@
 
     <div id='cssmenu'>
       <ul> <!-- class='active' define o selecionado -->
-       <li><a href='index.html'>Home</a></li> 
+       <li><a href='index.php'>Home</a></li> 
        <li><a href='info.html'>Sobre</a></li>
-       <li><a href='participar.html'>Participar</a></li>
+       <li><a href='participar.php'>Participar</a></li>
        <li><a href='contato.html'>Contato</a></li>
-       <li class='active'><a href='relatorio.html'>Relatórios</a></li>
+       <li class='active'><a href='relatorio.php'>Relatórios</a></li>
        <li style="display:scroll;position:fixed;top:10px;right:10px;"> <img src="imgs/logo_uffs.jpg" title="UFFS" alt="LOGO UFFS"> </li>
       </ul>
     </div>

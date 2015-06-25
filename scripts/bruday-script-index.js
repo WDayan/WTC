@@ -4,6 +4,8 @@ var map;
 var logoUniver = 'imgs/univer.png';
 var logoEstudant = 'imgs/newaluno.png';
 var infoWindow;
+var VARS_AMBIENTE;
+var VARS_AMBIENTE_CONTROLE;
 
 function initialize() {
 	var mapOptions = {
@@ -19,13 +21,13 @@ function initialize() {
     	infoWindow.close();
     });
 
-  	criaMarkerUFFS(0, logoUniver, -10, 10, "UFFS CHAPECO", "Chapecó", "www", "49");
+  	criaMarkerUFFS(0, logoUniver, VARS_AMBIENTE[3], VARS_AMBIENTE[2], VARS_AMBIENTE[0], VARS_AMBIENTE[1], "www", "49");
 
   	criaMarkerAluno(1, logoEstudant, 10, -10, "Bruno", "Chapecó", "Chapecó", "CC");
+  	
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
 
 function criaMarkerUFFS(indc, imagm, fm_lat, fm_lng, fm_nome, fm_end, fm_site, fm_tel){
 	

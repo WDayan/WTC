@@ -41,12 +41,23 @@
 		return query($db, $query);
 	}
 
-	function lastAddress($db){
+	function lastAddress($db){ //Vai retornar somente o ultimo ID
 		$query = "SELECT MAX(id) FROM endereco;";
 		$result = query($db, $query);
-		mysqli_fetch_all($result, MYSQLI_NUM);
-		echo "oi".$result['id']."bye";
-		return 500;
+		$row = mysqli_fetch_row($result);
+		return $row[0];
+	}
+
+	function allCampus($db){
+		$query = "SELECT nome, ende, longitude, latitude FROM campus JOIN endereco ON endereco_id=id;";
+		$result = query($db, $query);
+		return $result; //Vai retornar um tabela com todos os campus e seus endereços
+	}
+
+	function cursoForCampus($db,$nome){
+		$query = "SELECT curso.nome FROM curso JOIN campus ON nomec=".$nome.";";
+		$result = query($db,$query);
+		return $result;
 	}
 
 ?>
